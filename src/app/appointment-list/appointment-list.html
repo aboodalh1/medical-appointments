@@ -1,146 +1,134 @@
 <div class="appointment-container">
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <div class="sidebar-icon yellow">📅</div>
-    <div class="sidebar-icon purple">📄</div>
-    <div class="sidebar-icon pink">💊</div>
-    <div class="sidebar-icon green">📊</div>
-    <div class="sidebar-icon orange">⚙️</div>
-    <div class="sidebar-icon blue">💬</div>
-    <div class="sidebar-icon red">❤️</div>
-  </div>
-
-  <!-- Main Content -->
-  <div class="main-content">
-    <!-- Header -->
-    <div class="header">
-      <div class="header-left">
-        <button class="menu-btn">☰</button>
-        <h1>Appointment List</h1>
-      </div>
-      <div class="header-right">
-        <button class="new-appointment-btn">+ New Appointment</button>
-        <div class="user-profile">
-          <span class="user-name">John Smith</span>
-          <div class="user-avatar">👤</div>
-        </div>
-      </div>
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-icon yellow" routerLink="/calendar">📅</div>
+        <div class="sidebar-icon purple" routerLink="/appointments">📄</div>
+        <div class="sidebar-icon pink">💊</div>
+        <div class="sidebar-icon green">📊</div>
+        <div class="sidebar-icon orange">⚙️</div>
+        <div class="sidebar-icon blue">💬</div>
+        <div class="sidebar-icon red">❤️</div>
     </div>
 
-    <!-- Search and Filter Section -->
-    <div class="search-filter-section">
-      <div class="search-controls">
-        <input 
-          type="text" 
-          placeholder="Search" 
-          class="search-input" 
-          [(ngModel)]="searchTerm"
-          (input)="onSearch()">
-        <button class="change-status-btn">Change Status</button>
-      </div>
-      <div class="filter-controls">
-        <label class="today-appointments">
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <button class="menu-btn">☰</button>
+                <h1>Appointment List</h1>
+            </div>
+            <div class="header-right">
+                <button class="new-appointment-btn">+ New Appointment</button>
+                <div class="user-profile">
+                    <span class="user-name">John Smith</span>
+                    <div class="user-avatar">👤</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Search and Filter Section -->
+        <div class="search-filter-section">
+            <div class="search-controls">
+                <input type="text" placeholder="Search" class="search-input" [(ngModel)]="searchTerm" (input)="onSearch()">
+                <button class="change-status-btn">Change Status</button>
+            </div>
+            <div class="filter-controls">
+                <label class="today-appointments">
           <input 
             type="checkbox" 
             [(ngModel)]="showTodayOnly"
             (change)="onTodayFilterChange()"> 
           Today appointments
         </label>
-        <button class="filters-btn">Filters ⚙️</button>
-      </div>
-    </div>
+                <button class="filters-btn">Filters ⚙️</button>
+            </div>
+        </div>
 
-    <!-- Data Table -->
-    <div class="table-container">
-      <table class="appointments-table">
-        <thead>
-          <tr>
-            <th>
-              <input 
-                type="checkbox"
-                [checked]="isAllSelected()"
-                (change)="selectAllRows()">
-            </th>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Required Services</th>
-            <th>Doctor</th>
-            <th>Date</th>
-            <th>Time</th>
-            <th>Phone</th>
-            <th>Cost</th>
-            <th>Balance</th>
-            <th>Remarks</th>
-            <th>Payment Status</th>
-            <th>Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let appointment of filteredAppointments" [class.selected]="isRowSelected(appointment.id)">
-            <td>
-              <input 
-                type="checkbox" 
-                [checked]="isRowSelected(appointment.id)"
-                (change)="toggleRowSelection(appointment.id)">
-            </td>
-            <td>{{ appointment.id }}</td>
-            <td>{{ appointment.name }}</td>
-            <td>{{ appointment.requiredServices }}</td>
-            <td class="doctor-cell">
-              <div class="doctor-info">
-                <div class="doctor-avatar">👨‍⚕️</div>
-                <span>{{ appointment.doctor }}</span>
-              </div>
-            </td>
-            <td>{{ appointment.date }}</td>
-            <td>{{ appointment.time }}</td>
-            <td>{{ appointment.phone }}</td>
-            <td>{{ appointment.cost }}</td>
-            <td>{{ appointment.balance }}</td>
-            <td>{{ appointment.remarks }}</td>
-            <td>
-              <span class="payment-status" [ngClass]="getPaymentStatusClass(appointment.paymentStatus)">
+        <!-- Data Table -->
+        <div class="table-container">
+            <table class="appointments-table">
+                <thead>
+                    <tr>
+                        <th>
+                            <input type="checkbox" [checked]="isAllSelected()" (change)="selectAllRows()">
+                        </th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Required Services</th>
+                        <th>Doctor</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Phone</th>
+                        <th>Cost</th>
+                        <th>Balance</th>
+                        <th>Remarks</th>
+                        <th>Payment Status</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let appointment of filteredAppointments" [class.selected]="isRowSelected(appointment.id)">
+                        <td>
+                            <input type="checkbox" [checked]="isRowSelected(appointment.id)" (change)="toggleRowSelection(appointment.id)">
+                        </td>
+                        <td>{{ appointment.id }}</td>
+                        <td>{{ appointment.name }}</td>
+                        <td>{{ appointment.requiredServices }}</td>
+                        <td class="doctor-cell">
+                            <div class="doctor-info">
+                                <div class="doctor-avatar">👨‍⚕️</div>
+                                <span>{{ appointment.doctor }}</span>
+                            </div>
+                        </td>
+                        <td>{{ appointment.date }}</td>
+                        <td>{{ appointment.time }}</td>
+                        <td>{{ appointment.phone }}</td>
+                        <td>{{ appointment.cost }}</td>
+                        <td>{{ appointment.balance }}</td>
+                        <td>{{ appointment.remarks }}</td>
+                        <td>
+                            <span class="payment-status" [ngClass]="getPaymentStatusClass(appointment.paymentStatus)">
                 {{ appointment.paymentStatus }}
               </span>
-            </td>
-            <td>
-              <span class="status-badge" [ngClass]="getStatusClass(appointment.status)">
+                        </td>
+                        <td>
+                            <span class="status-badge" [ngClass]="getStatusClass(appointment.status)">
                 {{ appointment.status }}
               </span>
-            </td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
-    <!-- Footer Summary -->
-    <div class="footer-summary">
-      <div class="summary-info">
-        <span class="summary-icon">⚠️</span>
-        <span>{{ getSelectedCount() }} of {{ getTotalAppointments() }} selected</span>
-      </div>
-      <div class="summary-totals">
-        <span class="total-amount">2000€</span>
-        <span class="total-amount">750€</span>
-        <span class="total-amount">250€</span>
-      </div>
-    </div>
+        <!-- Footer Summary -->
+        <div class="footer-summary">
+            <div class="summary-info">
+                <span class="summary-icon">⚠️</span>
+                <span>{{ getSelectedCount() }} of {{ getTotalAppointments() }} selected</span>
+            </div>
+            <div class="summary-totals">
+                <span class="total-amount">2000€</span>
+                <span class="total-amount">750€</span>
+                <span class="total-amount">250€</span>
+            </div>
+        </div>
 
-    <!-- Pagination -->
-    <div class="pagination">
-      <button class="pagination-btn">Prev</button>
-      <span class="page-numbers">
+        <!-- Pagination -->
+        <div class="pagination">
+            <button class="pagination-btn">Prev</button>
+            <span class="page-numbers">
         <span class="page-number active">1</span>
-        <span class="page-number">2</span>
-        <span class="page-number">3</span>
-      </span>
-      <button class="pagination-btn">Next</button>
-      <select class="page-size">
+            <span class="page-number">2</span>
+            <span class="page-number">3</span>
+            </span>
+            <button class="pagination-btn">Next</button>
+            <select class="page-size">
         <option value="10">10</option>
         <option value="25">25</option>
         <option value="50">50</option>
       </select>
+        </div>
     </div>
-  </div>
 </div>
-

@@ -1,0 +1,73 @@
+<div class="calendar-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="sidebar-icon yellow active" routerLink="/calendar">📅</div>
+        <div class="sidebar-icon purple" routerLink="/appointments">📄</div>
+        <div class="sidebar-icon pink">👥</div>
+        <div class="sidebar-icon green">🔧</div>
+        <div class="sidebar-icon orange">📦</div>
+        <div class="sidebar-icon blue">👨‍💼</div>
+        <div class="sidebar-icon red">🚪</div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-left">
+                <button class="menu-btn">☰</button>
+                <div class="logo">Abood</div>
+                <h1>Calendar</h1>
+            </div>
+            <div class="header-right">
+                <button class="new-appointment-btn">+ New Appointment</button>
+                <div class="user-profile">
+                    <span class="user-name">John Smith</span>
+                    <div class="user-avatar">👤</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Date Navigation -->
+        <div class="date-navigation">
+            <div class="date-controls">
+                <button class="nav-btn" (click)="previousDay()">←</button>
+                <span class="current-date">{{ currentDate | date:'EEEE, d MMMM, y' }}</span>
+                <button class="nav-btn" (click)="nextDay()">→</button>
+            </div>
+            <div class="view-controls">
+                <label class="month-toggle">
+          <input type="checkbox" [(ngModel)]="monthView" (change)="toggleView()">
+          Month
+        </label>
+            </div>
+        </div>
+
+        <!-- Calendar Grid -->
+        <div class="calendar-grid">
+            <!-- Column Headers -->
+            <div class="calendar-header">
+                <div class="time-column-header"></div>
+                <div class="person-column" *ngFor="let person of people">
+                    <div class="person-avatar">
+                        <p>👨‍🦳</p>
+                    </div>
+                    <span class="person-name">{{ person.name }}</span>
+                </div>
+            </div>
+
+            <!-- Time Slots and Appointments -->
+            <div class="calendar-body">
+                <div class="time-slot" *ngFor="let timeSlot of timeSlots">
+                    <div class="time-label">{{ timeSlot }}</div>
+                    <div class="appointment-column" *ngFor="let person of people">
+                        <div class="appointment-block" *ngFor="let appointment of getAppointmentsForTimeAndPerson(timeSlot, person.id)" [ngClass]="getAppointmentClass(appointment.type)" [style.height.px]="appointment.duration * 30">
+                            <span class="appointment-text">{{ appointment.clientName }}</span>
+                            <span class="appointment-service">{{ appointment.service }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

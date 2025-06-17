@@ -5,16 +5,20 @@ import { CommonModule } from '@angular/common';
 
 import { App } from './app';
 import { AppointmentListComponent } from './appointment-list/appointment-list';
+import { CalendarComponent } from './calendar/calendar';
+import { AppRoutingModule } from './app-routing-module';
 
 @NgModule({
   declarations: [
     App,
-    AppointmentListComponent
+    AppointmentListComponent,
+    CalendarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
