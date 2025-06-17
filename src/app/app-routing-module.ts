@@ -8,7 +8,7 @@ import { AppointmentListComponent } from './appointment-list/appointment-list';
 const routes: Routes = [
   { path: 'calendar', component: CalendarComponent }, // This defines the '/calendar' route
   { path: 'appointments', component: AppointmentListComponent }, // This defines the '/calendar' route
-  // { path: '', redirectTo: '/appointment-list', pathMatch: 'full' }, // Optional: Redirects empty path to /calendar
+  { path: '', redirectTo: '/appointments', pathMatch: 'full' }, // Optional: Redirects empty path to /calendar
   // { path: '**', redirectTo: '/calendar' } // Optional: Handles any other unknown routes
 ];
 
