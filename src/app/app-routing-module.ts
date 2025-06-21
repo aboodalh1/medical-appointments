@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
-  { path: '', redirectTo: '/appointments', pathMatch: 'full' }, // Optional: Redirects empty path to /calendar
+  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Optional: Redirects empty path to /calendar
   // { path: '**', redirectTo: '/calendar' } // Optional: Handles any other unknown routes
 ];
 
