@@ -1,0 +1,83 @@
+<div class="flex min-h-screen font-inter">
+    <!-- Right Section: Logo with Blue Background -->
+    <div class="w-1/2 bg-[#F36A3B] flex flex-col items-center justify-center text-white p-8">
+        <div class="w-32 h-32 sm:w-40 sm:h-40 bg-white rounded-full flex items-center justify-center mb-6 shadow-lg">
+            <img src="img/orange_logo.png" alt="Jaramana Center Logo" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full" />
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-2">Jaramana Center</h1>
+        <p class="text-md sm:text-lg font-medium">Medical Center</p>
+    </div>
+
+    <!-- Left Section: Login Form -->
+    <div class="w-1/2 flex items-center justify-center bg-gray-100 p-6 sm:p-8 md:p-10">
+        <div class="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full max-w-md">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Register new user</h2>
+
+            <form (ngSubmit)="register()" class="space-y-4">
+                <div>
+                    <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email:</label>
+                    <input type="text" id="email" [(ngModel)]="email" name="email" required class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out"
+                        placeholder="Enter your Email" />
+                </div>
+                <div>
+                    <label for="phoneNumber:" class="block text-gray-700 text-sm font-semibold mb-2">Phone Number:</label>
+                    <input type="text" id="phoneNumber" [(ngModel)]="phoneNumber" name="phoneNumber" required class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out"
+                        placeholder="Enter your phone number" />
+                </div>
+                <div>
+                    <label for="username" class="block text-gray-700 text-sm font-semibold mb-2">Username:</label>
+                    <input type="text" id="username" [(ngModel)]="fullName" name="username" required class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out"
+                        placeholder="Enter your username" />
+                </div>
+                <div class="relative">
+                    <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password:</label>
+                    <input [type]="showPassword ? 'text' : 'password'" id="password" [(ngModel)]="password" name="password" required class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out pr-10"
+                        placeholder="Enter your password" />
+                    <button type="button" (click)="showPassword = !showPassword" class="absolute right-3 top-9 text-gray-600">
+                    <svg *ngIf="!showPassword" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <svg *ngIf="showPassword" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.956 9.956 0 012.642-4.362M9.88 9.88a3 3 0 104.24 4.24M3 3l18 18" />
+                    </svg>
+                  </button>
+                </div>
+                <div class="relative mt-4">
+                    <label for="confirmPassword" class="block text-gray-700 text-sm font-semibold mb-2">Confirm Password:</label>
+                    <input [type]="showConfirmPassword ? 'text' : 'password'" id="confirmPassword" [(ngModel)]="confirmPassword" name="confirmPassword" required class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out pr-10"
+                        placeholder="Confirm your password" />
+                    <button type="button" (click)="showConfirmPassword = !showConfirmPassword" class="absolute right-3 top-9 text-gray-600">
+                    <svg *ngIf="!showConfirmPassword" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M2.458 12C3.732 7.943 7.523 5 12 5c4.477 0 8.268 2.943 9.542 7-1.274 4.057-5.065 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                    </svg>
+                    <svg *ngIf="showConfirmPassword" xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                      viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                        d="M13.875 18.825A10.05 10.05 0 0112 19c-4.477 0-8.268-2.943-9.542-7a9.956 9.956 0 012.642-4.362M9.88 9.88a3 3 0 104.24 4.24M3 3l18 18" />
+                    </svg>
+                  </button>
+                </div>
+                <button type="submit" class="w-full bg-[#F36A3B] hover:bg-[#D66A3B] text-white font-bold py-2.5 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out shadow-md">
+          Register
+        </button>
+            </form>
+
+            <div class="mt-6 text-center">
+                <p class="text-gray-600 text-sm">Already have an account?</p>
+                <button class="mt-2 w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2.5 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300 ease-in-out shadow-md" routerLink="/login">
+          Sign in
+        </button>
+            </div>
+        </div>
+    </div>
+</div>

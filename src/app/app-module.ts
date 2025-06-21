@@ -7,12 +7,16 @@ import { App } from './app';
 import { AppointmentListComponent } from './appointment-list/appointment-list';
 import { CalendarComponent } from './calendar/calendar';
 import { AppRoutingModule } from './app-routing-module';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
     App,
     AppointmentListComponent,
-    CalendarComponent
+    CalendarComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

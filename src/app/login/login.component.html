@@ -1,0 +1,40 @@
+<div class="flex min-h-screen font-inter">
+    <!-- Right Section: Logo with Blue Background -->
+    <div class="w-1/2 bg-[#3b5998] flex flex-col items-center justify-center text-white p-8">
+        <div class="w-32 h-32 sm:w-40 sm:h-40 bg-white rounded-full flex items-center justify-center mb-6 shadow-lg">
+            <img src="img/logo.png" alt="Jaramana Center Logo" class="w-24 h-24 sm:w-28 sm:h-28 rounded-full" />
+        </div>
+        <h1 class="text-3xl sm:text-4xl font-bold mb-2">Jaramana Center</h1>
+        <p class="text-md sm:text-lg font-medium">Medical Center</p>
+    </div>
+
+    <!-- Left Section: Login Form -->
+    <div class="w-1/2 flex items-center justify-center bg-gray-100 p-6 sm:p-8 md:p-10">
+        <div class="bg-white p-6 sm:p-8 md:p-10 rounded-xl shadow-lg w-full max-w-md">
+            <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Login</h2>
+
+            <form (ngSubmit)="login()" class="space-y-4">
+                <div>
+                    <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email:</label>
+                    <input type="email" id="email" [(ngModel)]="email" name="email" required class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out"
+                        placeholder="Enter your emial" />
+                </div>
+                <div>
+                    <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password:</label>
+                    <input type="password" id="password" [(ngModel)]="password" name="password" required class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out"
+                        placeholder="Enter your password" />
+                </div>
+                <button type="submit" class="w-full bg-[#3b5998] hover:bg-[#2a4371] text-white font-bold py-2.5 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out shadow-md">
+            Log In
+          </button>
+            </form>
+
+            <div class="mt-6 text-center">
+                <p class="text-gray-600 text-sm">Fotget Password?</p>
+                <button class="mt-2 w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2.5 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300 ease-in-out shadow-md" routerLink="/register">
+            Reset Password
+          </button>
+            </div>
+        </div>
+    </div>
+</div>

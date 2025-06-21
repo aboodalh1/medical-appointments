@@ -3,11 +3,15 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CalendarComponent } from './calendar/calendar'; // <--- Import your CalendarComponent here!
 import { AppointmentListComponent } from './appointment-list/appointment-list';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 // Make sure the path to your CalendarComponent is correct.
 
 const routes: Routes = [
   { path: 'calendar', component: CalendarComponent }, // This defines the '/calendar' route
   { path: 'appointments', component: AppointmentListComponent }, // This defines the '/calendar' route
+  { path: 'login', component: LoginComponent },
+  { path: 'register', component: RegisterComponent },
   { path: '', redirectTo: '/appointments', pathMatch: 'full' }, // Optional: Redirects empty path to /calendar
   // { path: '**', redirectTo: '/calendar' } // Optional: Handles any other unknown routes
 ];
