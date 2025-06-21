@@ -17,21 +17,21 @@
                 <div>
                     <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email:</label>
                     <input type="email" id="email" [(ngModel)]="email" name="email" required class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out"
-                        placeholder="Enter your emial" />
+                        placeholder="Enter your email" />
                 </div>
                 <div>
                     <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password:</label>
                     <input type="password" id="password" [(ngModel)]="password" name="password" required class="shadow-sm appearance-none border border-gray-300 rounded-lg w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition duration-200 ease-in-out"
                         placeholder="Enter your password" />
                 </div>
-                <button type="submit" class="w-full bg-[#3b5998] hover:bg-[#2a4371] text-white font-bold py-2.5 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out shadow-md">
+                <button type="submit" routerLink="/appointments" class="w-full bg-[#3b5998] hover:bg-[#2a4371] text-white font-bold py-2.5 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition duration-300 ease-in-out shadow-md">
             Log In
           </button>
             </form>
 
             <div class="mt-6 text-center">
-                <p class="text-gray-600 text-sm">Fotget Password?</p>
-                <button class="mt-2 w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2.5 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300 ease-in-out shadow-md" routerLink="/register">
+                <p class="text-gray-600 text-sm">Forgot Password?</p>
+                <button class="mt-2 w-full bg-gray-200 hover:bg-gray-300 text-gray-800 font-bold py-2.5 px-4 rounded-xl focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-opacity-50 transition duration-300 ease-in-out shadow-md" routerLink="/forget-password">
             Reset Password
           </button>
             </div>

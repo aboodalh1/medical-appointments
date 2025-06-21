@@ -5,6 +5,7 @@ import { CalendarComponent } from './calendar/calendar'; // <--- Import your Cal
 import { AppointmentListComponent } from './appointment-list/appointment-list';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 // Make sure the path to your CalendarComponent is correct.
 
 const routes: Routes = [
@@ -12,6 +13,7 @@ const routes: Routes = [
   { path: 'appointments', component: AppointmentListComponent }, // This defines the '/calendar' route
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
+  { path: 'forget-password', component: ForgetPasswordComponent },
   { path: '', redirectTo: '/appointments', pathMatch: 'full' }, // Optional: Redirects empty path to /calendar
   // { path: '**', redirectTo: '/calendar' } // Optional: Handles any other unknown routes
 ];
