@@ -2,6 +2,7 @@ import { NgModule, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 import { App } from './app';
 import { AppointmentListComponent } from './appointment-list/appointment-list';
@@ -26,7 +27,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     BrowserModule,
     FormsModule,
     CommonModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners()
