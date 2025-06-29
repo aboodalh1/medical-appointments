@@ -1,0 +1,111 @@
+.management-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar {
+    width: 60px;
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 18px;
+}
+
+.sidebar-icon:hover {
+    transform: scale(1.1);
+}
+
+.sidebar-icon.yellow {
+    background-color: #fff3cd;
+}
+
+.sidebar-icon.purple {
+    background-color: #e2d9f3;
+}
+
+.sidebar-icon.pink {
+    background-color: #f8d7da;
+}
+
+.sidebar-icon.green {
+    background-color: #d4edda;
+}
+
+.sidebar-icon.orange {
+    background-color: #ffeaa7;
+}
+
+.sidebar-icon.blue {
+    background-color: #cce5ff;
+}
+
+.sidebar-icon.red {
+    background-color: #f5c6cb;
+}
+
+.appointment-container {
+    display: flex;
+    min-height: 100vh;
+    background-color: #f5f5f5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.management-container h2 {
+    margin-bottom: 1.5rem;
+}
+
+.controls {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.add-btn {
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 0.5rem 1.2rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.add-btn:hover {
+    background: #0056b3;
+}
+
+.user-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.user-table th,
+.user-table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid #eee;
+    text-align: left;
+}
+
+.user-table th {
+    background: #f8f9fa;
+}

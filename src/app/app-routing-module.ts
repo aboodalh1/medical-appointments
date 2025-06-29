@@ -7,6 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { ManagementListComponent } from './management/management-list.component';
+import { ManagementAddComponent } from './management/management-add.component';
 // Make sure the path to your CalendarComponent is correct.
 
 const routes: Routes = [
@@ -16,7 +18,9 @@ const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'forget-password', component: ForgetPasswordComponent },
   { path: 'reset-password', component: ResetPasswordComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, // Optional: Redirects empty path to /calendar
+  { path: 'management', component: ManagementListComponent },
+  { path: 'management/add', component: ManagementAddComponent },
+  { path: '', redirectTo: '/appointments', pathMatch: 'full' }, // Optional: Redirects empty path to /calendar
   // { path: '**', redirectTo: '/calendar' } // Optional: Handles any other unknown routes
 ];
 
